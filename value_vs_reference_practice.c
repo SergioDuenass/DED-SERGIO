@@ -28,11 +28,11 @@ Create a blackjack function that:
 
 */
 
-int blackjack(int n1, int n2, int flag) {
+int blackjack(int n1, int n2, char * flag) {
   int sum = n1 + n2;
   n2 = sum;
   if (sum == 21) {
-    flag = 'W';
+    *flag = 'W';
   }
   return sum > 0;
 
@@ -55,7 +55,7 @@ int main()
   int n2 = 11;
   char flag = 'L';
 
-  int result = blackjack(n1, n2, flag);
+  int result = blackjack(n1, n2, &flag);
   printf("resultado:\n %d, flag: %c\n", result, flag);
   return 0;
 }
