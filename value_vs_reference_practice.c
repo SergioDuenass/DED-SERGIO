@@ -8,6 +8,12 @@
   
 */
 
+void swap(int* a, int* b) {
+  int temp = *a;
+  *a = *b;
+  *b = temp;
+}
+
 /* Excercise 2 : blackjack
 
 Create a blackjack function that:
@@ -28,6 +34,10 @@ int main()
   /* Exercise 1:  swap num1 and num2 value */
   int num1 = 10;
   int num2 = 20;
+
+  printf("Antes:\n num1 = %d, num2 = %d\n", num1, num2);
+  swap(&num1, &num2);
+  printf("Después:\n num1 = %d, num2 = %d\n", num1, num2);
 
   /* Exercise 2:  Blackjack 
     Call and test your program here */
