@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/srg/Documents/Universidad/7/DED/Sesion1/DED-SERGIO",
+      "program": "/Users/srg/Documents/Universidad/7/DED/Sesion1/DED-SERGIO/build/Debug/outDebug"
+    }
+  ]
+}
