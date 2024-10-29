@@ -236,7 +236,22 @@ int ex02()
 int ex03()
 {
   /* ----------  INICIO DE RESPUESTA:  --------------- */
-  node** arreglo = (node**)malloc(6 * sizeof(node*));
+  node** arreglo = (node**)malloc(6 * sizeof(node*)); // pedimos memoria para 6 apuntadores a nodos
+
+  arreglo[0] = L1;
+  arreglo[1] = L2;
+  arreglo[2] = LD1;
+  arreglo[3] = LD2;
+  arreglo[4] = NULL;
+  arreglo[5] = NULL;
+
+  // Imprimimos las listas
+  for (int i = 0; i < 4; i++) {
+    printf("Lista %d:\n", i + 1);
+    printlist(arreglo[i]);
+  }
+
+  free(arreglo);
   /* ----------  FIN DE RESPUESTA:  --------------- */
   return 0;
 }
@@ -273,7 +288,7 @@ int ex03()
 int ex04()
 {
 /* ----------  INICIO RESPUESTA:  --------------- */
-  
+FILE  
 /* ----------  FIN RESPUESTA:  --------------- */
   return 0;
 }
