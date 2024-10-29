@@ -4,7 +4,7 @@
 #include <unistd.h>
 #include <string.h>
 
-char alumno[100] = "Escribe tu nombre aquí";
+char alumno[100] = "Sergio Daniel Dueñas Godinez";
 
 /*  
 
@@ -93,7 +93,9 @@ node LD1nuevo, LD2nuevo;
 
 
 /* ----------  INICIO RESPUESTA:  --------------- */
-
+node* moverInicio(node* inicio){
+  if ()
+}
 /* ----------  FIN RESPUESTA:  --------------- */
 
 
