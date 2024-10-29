@@ -288,7 +288,13 @@ int ex03()
 int ex04()
 {
 /* ----------  INICIO RESPUESTA:  --------------- */
-FILE  
+FILE *fptr = fopen("./DED-Examen2/destinos.txt", "r+");
+int num;
+char **ciudad;
+int *costo;
+
+fscanf(fptr, "%d\n", &num);
+
 /* ----------  FIN RESPUESTA:  --------------- */
   return 0;
 }
