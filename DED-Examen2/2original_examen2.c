@@ -290,10 +290,30 @@ int ex04()
 /* ----------  INICIO RESPUESTA:  --------------- */
 FILE *fptr = fopen("./DED-Examen2/destinos.txt", "r+");
 int num;
-char **ciudad;
-int *costo;
-
 fscanf(fptr, "%d\n", &num);
+
+char **ciudad= (char**)malloc(num * sizeof(char*));
+int *costo = (int*)malloc(num * sizeof(int));
+
+for (int i = 0; i < num; i++) {
+  ciudad[i] = (char*)malloc(20 * sizeof(char));
+  fscanf(fptr, "%s $%d\n", ciudad[i], &costo[i]);
+}
+
+for (int i = 0; i < num; i++) {
+  printf("%s $%d\n", ciudad[i], costo[i]);
+}
+
+fseek(fptr, 0, SEEK_END);
+fprintf(fptr, "\nSergio Danuel Dueñas Godinez\n");
+
+for (int i = 0; i < num; i++) {
+  free(ciudad[i]);
+}
+
+free(ciudad);
+free(costo);
+fclose(fptr);
 
 /* ----------  FIN RESPUESTA:  --------------- */
   return 0;
@@ -367,7 +387,7 @@ int main()
   printf("\n=== E03: Arreglo de listas\n");
   ex03();
   printf("\n=== E04: Destinos \n");
-  //ex04();
+  ex04();
   printf("\n=== E05: Password \n");
   //ex05();
   printf("\n=== E06: Reverse \n");
