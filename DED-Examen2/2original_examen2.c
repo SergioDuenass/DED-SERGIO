@@ -414,7 +414,7 @@ char pop(Stack* stack) {
 // Función para invertir una cadena usando un stack
 void reverse(char str[]) {
   int n = strlen(str);
-  Stack* stack = createStack(n);
+  Stack* stack = crearStack(n);
 
   // Pusheamos todos los caracteres de la cadena al stack
   for (int i = 0; i < n; i++) {
