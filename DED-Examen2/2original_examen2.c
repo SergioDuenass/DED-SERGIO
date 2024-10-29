@@ -288,7 +288,7 @@ int ex03()
 int ex04()
 {
 /* ----------  INICIO RESPUESTA:  --------------- */
-FILE *fptr = fopen("./DED-Examen2/destinos.txt", "r+");
+FILE *fptr = fopen("/Users/srg/Documents/Universidad/7/DED/Sesion1/DED-SERGIO/DED-Examen2/destinos.txt", "r+");
 int num;
 fscanf(fptr, "%d\n", &num);
 
@@ -337,7 +337,21 @@ fclose(fptr);
 int ex05()
 {
   /* ----------  INICIO RESPUESTA:  --------------- */
+  FILE *fptr2 = fopen("/Users/srg/Documents/Universidad/7/DED/Sesion1/DED-SERGIO/DED-Examen2/password.data", "rb");
+  int num;
+  char pwd[9];
 
+  while (fread(&num, sizeof(int), 1, fptr2)) {
+    if (num == 123456) {
+      // Leemos el password
+      fread(pwd, sizeof(char), 8, fptr2);
+      pwd[8] = '\0'; 
+      printf("Se ha encontrado wuu!: %s\n", pwd);
+      break;  
+    }
+  }
+
+    fclose(fptr2);
  /* ----------  FIN RESPUESTA:  --------------- */
   return 0;
 }
@@ -364,6 +378,59 @@ int ex05()
 /* ----------  INICIO RESPUESTA:  --------------- */
 //Agrega aquí tus estructuras, funciones del Stack, y función "reverse".
 
+// Estructura para el stack
+typedef struct Stack {
+  int top;
+  unsigned capacity;
+  char* array;
+} Stack;
+
+// Función para crear un stack de capacidad dada
+Stack* crearStack(unsigned capacity) {
+  Stack* stack = (Stack*)malloc(sizeof(Stack));
+  stack->capacity = capacity;
+  stack->top = -1;
+  stack->array = (char*)malloc(stack->capacity * sizeof(char));
+  return stack;
+}
+
+// Función para verificar si el stack está vacío
+int isEmpty(Stack* stack) {
+  return stack->top == -1;
+}
+
+// Función para agregar un elemento al stack
+void push(Stack* stack, char item) {
+  stack->array[++stack->top] = item;
+}
+
+// Función para sacar un elemento del stack
+char pop(Stack* stack) {
+  if (!isEmpty(stack))
+    return stack->array[stack->top--];
+  return '\0';
+}
+
+// Función para invertir una cadena usando un stack
+void reverse(char str[]) {
+  int n = strlen(str);
+  Stack* stack = createStack(n);
+
+  // Pusheamos todos los caracteres de la cadena al stack
+  for (int i = 0; i < n; i++) {
+    push(stack, str[i]);
+  }
+
+  // Sacamos todos los caracteres del stack y los ponemos de vuelta en la cadena
+  for (int i = 0; i < n; i++) {
+    str[i] = pop(stack);
+  }
+
+  free(stack->array);
+  free(stack);
+}
+
+
 /* ----------  FIN RESPUESTA:  --------------- */
 
 void ex06()
@@ -372,7 +439,7 @@ void ex06()
   printf("%s\n", prueba); //Debe imprimir "ITESO"
   /* ----------  INICIO RESPUESTA:  --------------- */
   //Llama tu función aquí.
-
+  reverse(prueba);
   /* ----------  FIN RESPUESTA:  --------------- */
   printf("%s\n", prueba); //Debe imprimir "OSETI"
 }
@@ -389,8 +456,8 @@ int main()
   printf("\n=== E04: Destinos \n");
   ex04();
   printf("\n=== E05: Password \n");
-  //ex05();
+  ex05();
   printf("\n=== E06: Reverse \n");
-  //ex06();
+  ex06();
   return 0;
 }
