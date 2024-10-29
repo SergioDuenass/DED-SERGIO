@@ -175,6 +175,16 @@ void insertMiddle(node* inicio, node* nuevo){
     count++;
   }
   int mitad = count / 2;
+  temp = inicio;
+  for (int i = 0; i < mitad; i++) {
+    temp = temp->next;
+  }
+  nuevo->next = temp->next;
+  temp->next = nuevo;
+  nuevo->prev = temp;
+  if (nuevo->next) {
+    nuevo->next->prev = nuevo;
+  }
 }
 
 /* ----------  FIN RESPUESTA:  --------------- */
@@ -226,7 +236,7 @@ int ex02()
 int ex03()
 {
   /* ----------  INICIO DE RESPUESTA:  --------------- */
-
+  node** arreglo = (node**)malloc(6 * sizeof(node*));
   /* ----------  FIN DE RESPUESTA:  --------------- */
   return 0;
 }
@@ -334,7 +344,7 @@ int main()
   printf("\n=== E02: Ingresar nodo a la mitad\n");
   ex02();
   printf("\n=== E03: Arreglo de listas\n");
-  //ex03();
+  ex03();
   printf("\n=== E04: Destinos \n");
   //ex04();
   printf("\n=== E05: Password \n");
