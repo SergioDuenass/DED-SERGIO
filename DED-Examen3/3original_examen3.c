@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "map.h"
 
 char alumno[100] = "Sergio Daniel Dueñas Godinez";
 
@@ -171,7 +172,7 @@ Asume que el hashing se hace de la siguiente manera:
 
   Escribe o dibuja el estado final de la cola "q".
 
-  R= 
+  R= front[Jorge, Sofia, Erick, Diego, Nicole]rear
 
 
 ******************************************************** Ejercicio 1: Mapa                 /20 pts **************************************************************
@@ -194,7 +195,14 @@ Asume que el hashing se hace de la siguiente manera:
 */
 /* INICIA RESPUESTA */
 // El mapa necesita 2 funciones y tal vez una estructura, declaralas aqui:
+// hash
+int int_hash(void * key) {
+    return *((int *) key);
+}
 
+boolean int_equals(void * key1, void * key2) {
+    return *((int *) key1) == *((int *) key2); 
+}
 
 /* FIN DE RESPUESTA */
 
