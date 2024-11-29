@@ -218,8 +218,28 @@ void ejercicio1()
         // Verificar si el número ya existe en el mapa
         int *key = &arreglo[i];
         int *value = (int *) map_get(m, key); 
+        
+        if (value == NULL) {
+            // si valor no existe = 1
+            int *new_value = (int *) malloc(sizeof(int));
+            *new_value = 1;
+            map_put(m, key, new_value);
+        } else {
+            // si valor existe =+ 1
+            (*value)++;
+        }
     }
 
+    // print
+    printf("Numero | Veces \n");
+    for (int i = 1; i < 10; i++) {
+        int *key = (int *) malloc(sizeof(int));
+        *key = i;
+        int *value = (int *) map_get(m, key);
+        if (value != NULL) {
+            printf("   %d   |    %d\n", i, *value);
+        }
+    }
   // TERMINA RESPUESTA
 }
 
