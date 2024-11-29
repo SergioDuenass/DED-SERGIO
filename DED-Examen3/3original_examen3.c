@@ -199,7 +199,7 @@ Asume que el hashing se hace de la siguiente manera:
 int int_hash(void * key) {
     return *((int *) key);
 }
-
+//equals
 boolean int_equals(void * key1, void * key2) {
     return *((int *) key1) == *((int *) key2); 
 }
@@ -208,13 +208,18 @@ boolean int_equals(void * key1, void * key2) {
 
 void ejercicio1()
 {
-  /* Comprueba que funciona consultando algun numero 
-    (el que tu quieras) */
   int arreglo[] = {1,1,1,2,3,0,1,2,5,5,1};
   int size = 11;
 
   // INICIA RESPUESTA
-  
+  map * m = map_create(10, int_hash, int_equals);
+    
+    for (int i = 0; i < size; i++) {
+        // Verificar si el número ya existe en el mapa
+        int *key = &arreglo[i];
+        int *value = (int *) map_get(m, key); 
+    }
+
   // TERMINA RESPUESTA
 }
 
