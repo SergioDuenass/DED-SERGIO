@@ -41,15 +41,15 @@ char alumno[100] = "Sergio Daniel Dueñas Godinez";
 
 4)	¿Por qué implementamos un conjunto mediante un árbol binario de búsqueda en lugar de utilizar una lista enlazada o un arreglo? Justifica bien tu respuesta.	
 
-  R=
+  R= Para que sea mucho más eficiente ya que siempre que esté balanceado se elimina la mitad de las posiilidades de búsqueda, por lo que es mucho más rápido.
 
 5)	Al crear un TDA / Librería ¿Por qué utilizamos void pointers en lugar de datos de un tipo específico?
 
-  R=
+  R= Para que pueda ser más "universal" y pueda ser utilizado por cualquier tipo de dato.
 
 6) Menciona una diferencia entre un conjunto y un mapa, desde el punto de vista de su comportamiento, no de su implementación:
 
-  R=
+  R= Un conjunto es una colección de elementos únicos, mientras que un mapa es una colección de pares de elementos únicos.
 
 ******************************************************** Teoría 2: 4 preguntas de 10 puntos       /40 pts **************************************************************
 
